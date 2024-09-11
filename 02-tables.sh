@@ -21,12 +21,12 @@ creer une table formation
     description # * beaucoup de texte
     duree # *superieur à 7 jours => check
 
-    create table formation (
-        id int primary key auto_increment,
-        name varchar(255) not null unique,
-        description TEXT,
-        lenght int check (lenght > 7)
-    );
+CREATE TABLE formation (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name varchar(255) NOT NULL UNIQUE,
+    description TEXT,
+    lenght INT CHECK (lenght > 7)
+);
 
 # Affichage de la structure d'une table :
    SHOW CREATE TABLE nom_table;
