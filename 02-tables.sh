@@ -14,13 +14,6 @@ CREATE TABLE user (
     email VARCHAR(255) UNIQUE
 );
 
-# ! les noms des colonnes en anglais
-creer une table formation
-    identifiant
-    intitule # * unique et non null
-    description # * beaucoup de texte
-    duree # *superieur à 7 jours => check
-
 CREATE TABLE formation (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name varchar(255) NOT NULL UNIQUE,
