@@ -44,3 +44,7 @@ CREATE TABLE formation (
 
 # Supprimer une colonne :
    ALTER TABLE nom_table DROP COLUMN nom_colonne;
+
+# Ajouter une clé etrangère :
+   ALTER TABLE nom_table ADD CONSTRAINT FOREIGN KEY (colonne) REFERENCES nom_table (colonne);
+
