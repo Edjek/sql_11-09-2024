@@ -24,6 +24,7 @@
 
 
 # Je veux recuperer tous les livre paruent en 1960, 1970, 1987
+
 # Je veux recuperer tous les livres qui contiennent PAS la lettre a dans leur titre
 # Je veux recuperer tous les livres qui commencent par la lettre a dans leur titre
 # Je veux recuperer tous les livres triés par ordre decroissant de date de parution
