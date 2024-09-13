@@ -3,7 +3,7 @@
 > Durée : 3 jours (21 heures au total)
 
 <center>
-<img src="./support/context/img/logo.png" alt="mysql" width="100">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" alt="mysql" width="100">
 </center>
 
 <br>
