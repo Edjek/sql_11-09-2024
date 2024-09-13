@@ -19,8 +19,6 @@ Vous êtes chargé de créer une base de données pour une bibliothèque. Cette 
 
 Créez une base de données appelée `library`.
 
-
-
 ### 2. Sélectionner la base de données
 
 Assurez-vous d'utiliser la base de données `library` avant de commencer la création des tables.
