@@ -18,9 +18,37 @@ Dans cet exercice, vous allez créer une base de données pour gérer des étudi
 
 #### a. Insertion des Étudiants
 
+('Doe', 'John', '2000-01-01', '123 Main Street', 'john.doe@example.com'),
+('Smith', 'Emma', '1999-03-15', '456 Elm Street', 'emma.smith@example.com'),
+('Johnson', 'Michael', '2001-05-10', '789 Oak Street', 'michael.johnson@example.com'),
+('Brown', 'Olivia', '2002-07-20', '321 Pine Street', 'olivia.brown@example.com'),
+('Taylor', 'Sophia', '2003-09-25', '654 Maple Street', 'sophia.taylor@example.com'),
+('Anderson', 'Liam', '2000-12-05', '987 Cedar Street', 'liam.anderson@example.com'),
+('Clark', 'Ava', '1998-02-14', '741 Birch Street', 'ava.clark@example.com'),
+('Lewis', 'Noah', '1999-04-30', '852 Walnut Street', 'noah.lewis@example.com'),
+('Walker', 'Mia', '2001-06-08', '369 Oakwood Street', 'mia.walker@example.com'),
+('Hall', 'Elijah', '2002-08-16', '258 Cherry Street', 'elijah.hall@example.com');
+
 #### b. Insertion des Matières
 
+('Mathématiques', 'Calcul et algèbre'),
+('Sciences', 'Physique et chimie'),
+('Histoire', 'Événements historiques'),
+('Français', 'Grammaire et littérature'),
+('Anglais', 'Conversation et grammaire');
+
 #### c. Insertion des Notes
+
+(1, 1, 15.5),
+(1, 2, 12.0),
+(2, 3, 14.5),
+(2, 4, 16.0),
+(3, 5, 13.5),
+(3, 1, 17.0),
+(4, 2, 13.0),
+(4, 3, 11.5),
+(5, 4, 18.0),
+(5, 5, 16.5);
 
 ---
 
