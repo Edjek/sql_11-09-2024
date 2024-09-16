@@ -10,9 +10,17 @@ Dans cet exercice, vous allez créer une base de données pour gérer des étudi
 
 ### 3. Créez la Table `student`
 
+id, last_name, first_name, birthday, address, email
+
 ### 4. Créez la Table `subject`
 
+id, name, description
+
 ### 5. Créez la Table `note`
+
+id, student_id, subject_id, note
+la table note est liée à la table student
+la table note est liée à la table subject
 
 ### 6. Insérez des Données dans les Tables
 
