@@ -38,12 +38,12 @@ WHERE condition
 GROUP BY column_name(s)
 ORDER BY column_name(s);
 
-SELECT count(*), city, population
-FROM commandes
-GROUP BY city
-HAVING population >300000
-ORDER BY city;
+SELECT count(*)
+FROM table_name
+GROUP BY colonne
+HAVING count(*) > 10
+ORDER BY colonne;
 
-# FAIRE LA MOYENNE des notes sans compter les 1  par pays en excluant les moyenne inderieur à 2 trie par code pays
+
 
 
