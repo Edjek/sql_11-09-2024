@@ -1,58 +1,113 @@
-# Exercice : Gestion d'une Base de Données pour des Bandes Dessinées Belges
+# Exercice avec une Base de Données pour des Bandes Dessinées Belges
 
-Dans cet exercice, vous allez concevoir et interroger une base de données pour gérer des bandes dessinées belges. L'objectif est de structurer les informations sur les bandes dessinées, les auteurs et les éditeurs, puis de réaliser des requêtes SQL pour extraire des données spécifiques.
+Dans cet exercice, nous allons créer une base de données pour gérer des bandes dessinées belges, en incluant plusieurs tables telles que "bd", "auteur" et "editeur".
 
-## Étapes à Réaliser
+## Étapes à Suivre
 
-### 1. Créer la Base de Données
+### 1. Créez une Base de Données
 
-Créez une base de données nommée `bd_collection_db` pour stocker toutes les informations.
+```sql
+CREATE DATABASE bd_collection_db;
+```
 
-### 2. Sélectionner la Base de Données
+### 2. Sélectionnez la Base de Données Nouvellement Créée
 
-Assurez-vous que vous utilisez la base de données nouvellement créée pour toutes les prochaines opérations.
+```sql
+USE bd_collection_db;
+```
 
-### 3. Créer la Table `auteur`
+### 3. Créez la Table "auteur"
 
-Définissez une table `auteur` pour stocker les informations des auteurs de bandes dessinées, incluant un identifiant unique, le nom de l'auteur et sa nationalité.
+```sql
+CREATE TABLE auteur (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(100),
+    nationalite VARCHAR(50)
+);
+```
 
-### 4. Insérer des Données dans la Table `auteur`
+### 4. Insérez des Données dans la Table "auteur"
 
-Ajoutez au moins trois auteurs dans cette table, en utilisant les valeurs suggérées ou en créant vos propres exemples.
+```sql
+INSERT INTO auteur (nom, nationalite) VALUES
+('Hergé', 'Belge'),
+('René Goscinny', 'Français'),
+('Albert Uderzo', 'Français');
+```
 
-### 5. Créer la Table `editeur`
+### 5. Créez la Table "editeur"
 
-Définissez une table `editeur` pour stocker les informations des éditeurs de bandes dessinées, incluant un identifiant unique, le nom de l'éditeur et son pays.
+```sql
+CREATE TABLE editeur (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(100),
+    pays VARCHAR(50)
+);
+```
 
-### 6. Insérer des Données dans la Table `editeur`
+### 6. Insérez des Données dans la Table "editeur"
 
-Ajoutez au moins trois éditeurs dans cette table, en utilisant les valeurs suggérées ou en créant vos propres exemples.
+```sql
+INSERT INTO editeur (nom, pays) VALUES
+('Casterman', 'Belgique'),
+('Dargaud', 'France'),
+('Dupuis', 'Belgique');
+```
 
-### 7. Créer la Table `bd`
+### 7. Créez la Table "bd"
 
-Définissez une table `bd` pour stocker les informations des bandes dessinées, incluant un identifiant unique, le titre, l'ID de l'auteur, l'ID de l'éditeur, et l'année de parution. Créez des relations entre la table `bd` et les tables `auteur` et `editeur` à l'aide de clés étrangères.
+```sql
+CREATE TABLE bd (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    titre VARCHAR(100),
+    auteur_id INT,
+    editeur_id INT,
+    annee_parution INT,
+    FOREIGN KEY (auteur_id) REFERENCES auteur(id),
+    FOREIGN KEY (editeur_id) REFERENCES editeur(id)
+);
+```
 
-### 8. Insérer des Données dans la Table `bd`
+### 8. Insérez des Données dans la Table "bd"
 
-Ajoutez au moins trois bandes dessinées dans cette table, en utilisant les valeurs suggérées ou en créant vos propres exemples.
+```sql
+INSERT INTO bd (titre, auteur_id, editeur_id, annee_parution) VALUES
+('Tintin au Tibet', 1, 1, 1960),
+('Astérix le Gaulois', 2, 2, 1961),
+('Les Aventures de Blake et Mortimer', 1, 3, 1946);
+```
 
-### 9. Requêtes SQL
+### 9. Effectuez des Requêtes pour Afficher les Informations sur les Bandes Dessinées
 
-Effectuez les requêtes suivantes pour extraire des informations spécifiques de votre base de données :
+#### a. Afficher Toutes les Bandes Dessinées avec les Informations Complètes
 
--   **a.** Affichez toutes les bandes dessinées avec les informations complètes (titre, auteur, éditeur et année de parution).
--   **b.** Affichez toutes les bandes dessinées publiées par un éditeur spécifique (par exemple, "Casterman").
--   **c.** Affichez toutes les bandes dessinées publiées après une certaine année (par exemple, après 1960).
+```sql
+SELECT bd.titre, auteur.nom AS auteur, editeur.nom AS editeur, bd.annee_parution
+FROM bd
+JOIN auteur ON bd.auteur_id = auteur.id
+JOIN editeur ON bd.editeur_id = editeur.id;
+```
+
+#### b. Afficher les Bandes Dessinées Publiées par un Éditeur Spécifique (par exemple, "Casterman")
+
+```sql
+SELECT bd.titre, auteur.nom AS auteur, editeur.nom AS editeur, bd.annee_parution
+FROM bd
+JOIN auteur ON bd.auteur_id = auteur.id
+JOIN editeur ON bd.editeur_id = editeur.id
+WHERE editeur.nom = 'Casterman';
+```
+
+#### c. Afficher les Bandes Dessinées Publiées Après une Certaine Année (par exemple, après 1960)
+
+```sql
+SELECT bd.titre, auteur.nom AS auteur, editeur.nom AS editeur, bd.annee_parution
+FROM bd
+JOIN auteur ON bd.auteur_id = auteur.id
+JOIN editeur ON bd.editeur_id = editeur.id
+WHERE bd.annee_parution > 1960;
+```
 
 ---
 
-## Objectifs de l'Exercice
-
--   Structurer une base de données relationnelle pour une collection de bandes dessinées.
--   Manipuler des tables en SQL et définir des relations entre elles.
--   Interroger des données avec des requêtes SQL.
-
-### Consignes pour l'Évaluation
-
--   La base de données doit être correctement définie avec des relations entre les tables.
--   Les requêtes SQL doivent retourner les résultats attendus.
+Cet exercice vous permet de créer une base de données pour des bandes dessinées belges, de gérer les relations entre les tables "bd", "auteur" et "editeur", et d'effectuer des requêtes pour obtenir des informations spécifiques. Vous pouvez ajouter davantage de données, de tables et d'autres fonctionnalités de MySQL pour enrichir votre base de données selon vos besoins.
