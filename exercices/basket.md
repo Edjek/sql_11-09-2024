@@ -28,7 +28,7 @@ Cette table stocke les informations sur les matchs joués :
 
 ### **Modifier la table `player`**
 
-- ajouter le champ age à la table player
+-   ajouter le champ age à la table player
 
 ---
 
