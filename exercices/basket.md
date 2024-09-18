@@ -12,7 +12,7 @@ Tout d'abord, créez une base de données pour le projet `ligue_basket`.
 
 Cette table stocke les informations sur les joueurs de basket :
 
--   id, name, team_id, size, weight, point_avg, age
+-   id, name, team_id, size, weight, point_avg
 
 #### **Table `team`**
 
@@ -25,6 +25,10 @@ Cette table contient les informations sur les équipes :
 Cette table stocke les informations sur les matchs joués :
 
 -   id, team_local, team_visitor, points_local, points_visiteur, date_match`
+
+### **Modifier la table `player`**
+
+- ajouter le champ age à la table player
 
 ---
 
